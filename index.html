@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Trailborn Hotels &amp; Resorts · A Custom Strategy · Talex Media</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" type="image/png" sizes="192x192" href="https://static.wixstatic.com/media/3c6878_9a68ae0b3ff84e198fdd43fac493e294~mv2_d_1500_1500_s_2.png/v1/fill/w_192,h_192,lg_1,usm_0.66_1.00_0.01/3c6878_9a68ae0b3ff84e198fdd43fac493e294~mv2_d_1500_1500_s_2.png"/>
+<link rel="shortcut icon" href="https://static.wixstatic.com/media/3c6878_9a68ae0b3ff84e198fdd43fac493e294~mv2_d_1500_1500_s_2.png/v1/fill/w_32,h_32,lg_1,usm_0.66_1.00_0.01/3c6878_9a68ae0b3ff84e198fdd43fac493e294~mv2_d_1500_1500_s_2.png" type="image/png"/>
+<link rel="apple-touch-icon" href="https://static.wixstatic.com/media/3c6878_9a68ae0b3ff84e198fdd43fac493e294~mv2_d_1500_1500_s_2.png/v1/fill/w_180,h_180,lg_1,usm_0.66_1.00_0.01/3c6878_9a68ae0b3ff84e198fdd43fac493e294~mv2_d_1500_1500_s_2.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --o:#E85A0C;
+  --o-dim:rgba(232,90,12,0.08);
+  --o-mid:rgba(232,90,12,0.18);
+  --o-border:rgba(232,90,12,0.28);
+  --bg:#F5F2EC;
+  --surface:#FFFFFF;
+  --surface2:#FAF8F5;
+  --border:#E2DDD6;
+  --border-strong:#C8C2BA;
+  --txt:#1A1816;
+  --txt2:#6B625A;
+  --txt3:#A89E96;
+  --green:#2D8C52;
+  --green-bg:#EDF7F2;
+  --green-border:#A8D9BC;
+  --red:#C0392B;
+  --red-bg:#FDF0EE;
+  --red-border:#E8BEBC;
+  --amber:#B07D10;
+  --amber-bg:#FDF7EC;
+  --amber-border:#E0C880;
+}
+
+html{background:var(--bg);color:var(--txt);font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.6}
+body{background:var(--bg);min-height:100vh}
+#wrap{max-width:700px;margin:0 auto;padding:0 1.25rem 5rem}
+
+.disp{font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;line-height:1}
+.head{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.02em;line-height:1.1}
+.lbl{font-family:'Oswald',sans-serif;font-weight:500;font-size:11px;letter-spacing:0.14em;text-transform:uppercase}
+.italic{font-family:'EB Garamond',Georgia,serif;font-style:italic}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--border)}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.topbar-logo{height:28px;width:auto}
+.topbar-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.08em;color:var(--txt)}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.topbar-cta{background:var(--o);color:#fff;font-family:'Oswald',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:8px 14px;border-radius:6px;text-decoration:none;transition:background 0.15s}
+.topbar-cta:hover{background:#c94d08}
+
+.hero{padding:3rem 0 2.5rem;border-bottom:2px solid var(--o)}
+.hero-step{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem;flex-wrap:wrap}
+.step-pill{background:var(--o);color:#fff;font-family:'Oswald',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px}
+.hero-eyebrow{font-family:'Oswald',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--txt2)}
+.hero-title{font-size:clamp(40px,8vw,66px);color:var(--txt);margin-bottom:0.5rem}
+.hero-tagline{font-size:clamp(19px,3.5vw,26px);color:var(--o);margin-bottom:1rem}
+
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:8px;background:var(--surface);overflow:hidden;margin:2rem 0}
+.stat-cell{padding:1rem;text-align:center;border-right:1px solid var(--border)}
+.stat-cell:last-child{border-right:none}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:0.04em;color:var(--o)}
+.stat-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--txt3);font-family:'Oswald',sans-serif;font-weight:400}
+
+.source-link{font-size:11px;color:var(--txt3);text-decoration:none;border-bottom:1px dotted var(--border-strong);transition:color 0.15s,border-color 0.15s;white-space:nowrap;margin-left:4px;font-family:'Oswald',sans-serif;letter-spacing:0.04em;position:relative;z-index:2}
+.source-link:hover{color:var(--o);border-bottom-color:var(--o)}
+.source-link::before{content:"↗ "}
+
+.callout{border-left:3px solid var(--o);padding:1rem 1.25rem;background:var(--surface);border-radius:0 8px 8px 0;margin:1.75rem 0}
+.callout p{font-family:'EB Garamond',Georgia,serif;font-style:italic;font-size:16px;color:var(--txt);line-height:1.75}
+.callout-attr{margin-top:0.6rem;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--o);font-family:'Oswald',sans-serif;font-weight:500}
+.callout-attr a{color:inherit;border-bottom:1px dotted var(--border-strong);text-decoration:none;transition:color 0.15s,border-color 0.15s}
+.callout-attr a:hover{color:var(--o);border-bottom-color:var(--o)}
+
+.section-intro{margin-bottom:1.25rem}
+.section-intro-row{display:flex;align-items:center;gap:8px;margin-bottom:0.4rem}
+.sec-pill-dark{background:var(--txt);color:#fff;font-family:'Oswald',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px}
+.sec-pill-orange{background:var(--o);color:#fff;font-family:'Oswald',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px}
+.section-eyebrow{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--txt3)}
+.section-title{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.02em;line-height:1.1;font-size:22px;color:var(--txt);margin-bottom:0.25rem}
+.section-subtitle{font-size:13px;color:var(--txt3);font-style:italic;font-family:'EB Garamond',Georgia,serif}
+
+.section-block{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:1rem}
+.section-block p{font-size:14px;color:var(--txt2);line-height:1.8;margin-bottom:0.9rem}
+.section-block p:last-child{margin-bottom:0}
+.section-block strong{color:var(--txt);font-weight:500}
+.section-block em{font-family:'EB Garamond',Georgia,serif;font-style:italic;color:var(--txt)}
+.section-block a{color:var(--txt2);text-decoration:none;border-bottom:1px dotted var(--border-strong);transition:color 0.15s,border-color 0.15s}
+.section-block a:hover{color:var(--o);border-bottom-color:var(--o)}
+
+.rule{height:1px;background:var(--border);border:none;margin:1.5rem 0}
+.rule-orange{height:2px;background:var(--o);border:none;margin:2.5rem 0}
+
+.ideas-grid{display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem}
+.idea-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.3rem;display:flex;gap:1.1rem;align-items:flex-start}
+.idea-card-featured{background:rgba(232,90,12,0.05);border-color:var(--o)}
+.idea-num{flex-shrink:0;width:36px;height:36px;background:var(--o);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:18px;display:flex;align-items:center;justify-content:center;border-radius:6px;margin-top:2px;letter-spacing:0.04em}
+.idea-body{flex:1;min-width:0}
+.idea-title{font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;color:var(--txt);letter-spacing:0.02em;margin-bottom:6px;line-height:1.35}
+.idea-desc{font-size:13.5px;color:var(--txt2);line-height:1.7}
+.idea-desc em{font-family:'EB Garamond',Georgia,serif;font-style:italic;color:var(--txt)}
+.idea-tag{margin-top:10px;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:0.12em;color:var(--o);text-transform:uppercase;font-weight:600}
+.idea-tag a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--o)}
+.idea-tag a:hover{border-bottom-style:solid}
+.why-block{margin-top:0.95rem;padding-top:0.9rem;border-top:1px solid var(--border)}
+.why-label{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--o);margin-bottom:0.65rem}
+.why-list{display:flex;flex-direction:column;gap:0.55rem}
+.why-item{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--txt2);line-height:1.5}
+.why-item strong{color:var(--txt);font-weight:600}
+.pilot-body{font-size:12.5px;color:var(--txt2);line-height:1.7}
+.why-icon{flex-shrink:0;width:16px;height:16px;margin-top:1px}
+.why-icon svg{width:16px;height:16px;display:block;stroke:var(--o);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.dir-list{list-style:none;padding:0;margin:0.6rem 0 1rem;display:flex;flex-direction:column;gap:0.65rem}
+.dir-item{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.7;color:var(--txt2)}
+.dir-item strong{color:var(--txt);font-weight:500}
+.dir-icon{flex-shrink:0;width:17px;height:17px;margin-top:3px}
+.dir-icon svg{width:17px;height:17px;display:block;stroke:var(--o);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+.reel-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:0.5rem}
+@media(max-width:560px){.reel-grid{grid-template-columns:1fr}}
+.reel-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.95rem 1.05rem;display:flex;flex-direction:column}
+.reel-eyebrow{font-family:'Oswald',sans-serif;font-size:9.5px;letter-spacing:0.16em;color:var(--o);text-transform:uppercase;font-weight:600;margin-bottom:0.4rem}
+.reel-title{font-family:'Oswald',sans-serif;font-weight:600;font-size:13.5px;color:var(--txt);letter-spacing:0.03em;margin-bottom:0.45rem;line-height:1.3}
+.reel-body{font-size:12.5px;color:var(--txt2);line-height:1.6;flex:1;margin-bottom:0.5rem}
+.reel-body em{font-family:'EB Garamond',Georgia,serif;font-style:italic;color:var(--txt)}
+.reel-body a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--border-strong);transition:color 0.15s,border-color 0.15s}
+.reel-body a:hover{color:var(--o);border-bottom-color:var(--o)}
+
+.whats-inside{margin:0.5rem 0 1rem}
+.wi-heading{font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;color:var(--txt);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1rem;text-align:center}
+.whats-inside-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:560px){.whats-inside-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.whats-inside-grid{grid-template-columns:1fr}}
+.wi-card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.95rem 1rem;text-decoration:none;color:inherit;transition:border-color 0.15s,background 0.15s}
+.wi-card:hover{border-color:var(--o);background:#FCFAF7}
+.wi-num{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--o);line-height:1;letter-spacing:0.04em;margin-bottom:8px}
+.wi-title{font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;color:var(--txt);letter-spacing:0.04em;margin-bottom:5px;line-height:1.3;text-transform:uppercase}
+.wi-desc{font-size:12.5px;color:var(--txt2);line-height:1.55}
+
+.case-card{background:var(--txt);border-radius:12px;padding:1.5rem 1.5rem 1.75rem;margin-bottom:1rem;color:#fff;overflow:hidden}
+.cs-label{font-family:'Oswald',sans-serif;font-weight:500;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--o);margin-bottom:0.5rem}
+.cs-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,42px);letter-spacing:0.03em;line-height:1;color:#fff;margin-bottom:1.1rem}
+.cs-stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.25rem}
+.cs-stat-cell{background:rgba(255,255,255,0.04);border-top:2px solid var(--o);padding:0.75rem 0.6rem 0.65rem}
+.cs-stat-num{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.03em;color:var(--o);line-height:1.05}
+.cs-stat-label{font-size:10px;color:rgba(255,255,255,0.55);line-height:1.35;margin-top:2px}
+.cs-section{border-left:3px solid var(--o);padding:0.5rem 0 0.5rem 0.85rem;margin-bottom:0.9rem}
+.cs-section:last-child{margin-bottom:0}
+.cs-section-label{font-family:'Oswald',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--o);margin-bottom:0.35rem}
+.cs-section-body{font-size:13px;color:rgba(255,255,255,0.78);line-height:1.7}
+.cs-footer-meta{margin-top:1.1rem;padding-top:0.9rem;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.45);font-family:'Oswald',sans-serif;letter-spacing:0.06em;text-align:center}
+.cs-video-embed{margin-top:1.25rem;position:relative;width:100%;aspect-ratio:16/9;background:#0F0E0D;border:1px solid rgba(255,255,255,0.08);border-radius:8px;overflow:hidden}
+.cs-video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block}
+
+.cred-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.25rem}
+.cred-chip{padding:6px 12px;border:1px solid var(--o-border);background:var(--o-dim);border-radius:4px;font-family:'Oswald',sans-serif;font-weight:500;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--o)}
+
+.byline{display:flex;gap:14px;align-items:center;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;margin:1.5rem 0}
+.byline-avatar{width:60px;height:60px;border-radius:50%;overflow:hidden;background:var(--o-dim);border:2px solid var(--o);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--o);flex-shrink:0}
+.byline-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.byline-body{flex:1;min-width:0}
+.byline-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;color:var(--txt);letter-spacing:0.03em}
+.byline-sub{font-size:12px;color:var(--txt2);line-height:1.5;margin-top:2px}
+.byline-imdb{flex-shrink:0;display:inline-flex;align-items:center;text-decoration:none;transition:transform 0.15s ease}
+.byline-imdb:hover{transform:translateY(-1px)}
+.byline-imdb img{height:22px;width:auto;display:block;border-radius:3px}
+.trust-strip{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.6rem;padding:1.15rem 0 0.35rem}
+.trust-logo{width:auto;object-fit:contain;display:block;opacity:0.9}
+.trust-logo.discovery{height:22px}
+.trust-logo.nbc{height:15px}
+.trust-logo.bbc{height:24px}
+.trust-emmy{display:inline-flex;flex-direction:column;align-items:center;line-height:1.1;text-align:center}
+.trust-emmy .n{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.03em;color:var(--o);line-height:1}
+.trust-emmy .t{font-family:'Oswald',sans-serif;font-size:8px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:var(--txt3);margin-top:1px}
+
+.brand-mark-row{display:flex;align-items:center;gap:14px;margin-bottom:1.25rem;flex-wrap:wrap}
+.brand-logo-wrap{width:56px;height:56px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:6px;flex-shrink:0}
+.brand-logo-wrap img{max-width:100%;max-height:100%;object-fit:contain}
+.brand-logo-fallback{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.04em;color:var(--o);line-height:1}
+
+.channel-grid{display:grid;grid-template-columns:1fr;gap:6px;margin-bottom:1rem}
+.channel-card{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.95rem;display:flex;gap:12px;align-items:flex-start;transition:border-color 0.15s,background 0.15s}
+.channel-card:hover{border-color:var(--o);background:#FCFAF7}
+.channel-card.channel-gap{border-style:dashed;background:var(--surface2)}
+.channel-link{position:absolute;inset:0;z-index:1;border-radius:8px}
+.channel-link:focus-visible{outline:2px solid var(--o);outline-offset:2px}
+.channel-icon{width:18px;height:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px}
+.channel-icon svg{width:18px;height:18px;display:block}
+.channel-icon.linkedin svg{fill:#0A66C2}
+.channel-icon.youtube svg{fill:#FF0000}
+.channel-icon.facebook svg{fill:#1877F2}
+.channel-icon.instagram svg{fill:#E4405F}
+.channel-icon.twitter svg{fill:#000}
+.channel-icon.tiktok svg{fill:#000}
+.channel-icon.spotify svg{fill:#1DB954}
+.channel-icon.applepodcasts svg{fill:#832BC1}
+.channel-icon.podcast svg{fill:#832BC1}
+.channel-icon.threads svg{fill:#000}
+.channel-icon.substack svg{fill:#FF6719}
+.channel-icon.blog svg{fill:var(--txt2)}
+.channel-icon.website svg{fill:var(--txt)}
+.channel-icon.books svg{fill:var(--o)}
+.channel-icon.vimeo svg{fill:#1AB7EA}
+.channel-handle a,.channel-snippet a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--border-strong);transition:color 0.15s,border-color 0.15s}
+.channel-handle a:hover,.channel-snippet a:hover{color:var(--o);border-bottom-color:var(--o)}
+.channel-body{flex:1;min-width:0}
+.channel-head{display:flex;align-items:baseline;gap:8px;margin-bottom:2px;flex-wrap:wrap}
+.channel-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;color:var(--txt);letter-spacing:0.06em;text-transform:uppercase}
+.channel-handle{font-size:11px;color:var(--txt3);font-family:'Oswald',sans-serif;letter-spacing:0.04em}
+.channel-snippet{font-size:13px;color:var(--txt2);line-height:1.55}
+.channel-snippet em{font-family:'EB Garamond',Georgia,serif;font-style:italic;color:var(--txt)}
+.channel-snippet ul{list-style:none;padding:0;margin:0 0 6px 0}
+.channel-snippet ul li{position:relative;padding-left:14px;margin-bottom:3px}
+.channel-snippet ul li::before{content:"·";position:absolute;left:4px;top:-2px;color:var(--o);font-weight:700;font-size:16px;line-height:1}
+.channel-snippet ul li:last-child{margin-bottom:0}
+.channel-gap .channel-snippet ul li::before{color:var(--txt3)}
+
+.cta-block{background:var(--txt);border-radius:12px;padding:2.25rem 1.75rem;margin-top:2rem;text-align:center}
+.cta-eyebrow{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(232,90,12,0.9);font-family:'Oswald',sans-serif;font-weight:500;margin-bottom:0.75rem}
+.cta-headline{font-size:clamp(28px,5vw,44px);color:#fff;margin-bottom:0.6rem}
+.cta-sub{font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.75;max-width:480px;margin:0 auto 1.75rem}
+.cta-primary{display:inline-block;background:var(--o);color:#fff;padding:14px 30px;border-radius:8px;font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.15s,transform 0.1s}
+.cta-primary:hover{background:#c94d08}
+.cta-primary:active{transform:scale(0.98)}
+.cta-reply{margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:rgba(255,255,255,0.55);font-family:'EB Garamond',Georgia,serif;font-style:italic;line-height:1.6}
+
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;margin-bottom:8px}
+.faq-q{font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;color:var(--txt);margin-bottom:6px;letter-spacing:0.02em}
+.faq-a{font-size:13px;color:var(--txt2);line-height:1.7}
+
+.site-footer{margin-top:3rem;padding:1.5rem 0 1rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.08em;color:var(--txt2)}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:var(--txt3);text-decoration:none;letter-spacing:0.06em;font-family:'Oswald',sans-serif;text-transform:uppercase}
+.footer-links a:hover{color:var(--o)}
+.footer-copy{font-size:11px;color:var(--txt3);width:100%}
+
+@media print{
+  body{background:#fff}
+  .topbar-cta,.cta-primary{display:none}
+}
+
+/* ── proof-led concept cards ────────────────────────────────────── */
+.scale-label{display:block;font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--o);margin-bottom:6px}
+.prec{margin-top:0.85rem;padding:0.95rem 1rem 0.85rem;border:1px solid var(--border);
+  border-radius:8px;background:var(--bg)}
+.prec-label{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--txt3);margin-bottom:0.7rem}
+.prec-spec{margin:0 0 0.9rem;display:grid;grid-template-columns:auto 1fr;gap:0.35rem 0.9rem}
+.prec-spec dt{font-family:'Oswald',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:0.07em;
+  text-transform:uppercase;color:var(--txt3);white-space:nowrap;padding-top:2px}
+.prec-spec dd{margin:0;font-size:13px;color:var(--txt2);line-height:1.6}
+.proj-video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#141414;
+  border-radius:8px;overflow:hidden;margin-bottom:0.85rem}
+.proj-video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block}
+.video-facade{cursor:pointer}
+.vf-thumb{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block}
+.vf-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:40px;
+  border-radius:9px;background:rgba(20,20,20,0.82);display:block}
+.vf-play:after{content:"";position:absolute;top:50%;left:52%;transform:translate(-50%,-50%);
+  border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff}
+.video-facade:hover .vf-play{background:var(--o)}
+.vf-title{position:absolute;left:0;right:0;bottom:0;padding:0.5rem 0.7rem;font-size:11px;
+  font-family:'Oswald',sans-serif;letter-spacing:0.05em;text-transform:uppercase;color:#fff;
+  background:linear-gradient(to top,rgba(0,0,0,0.78),rgba(0,0,0,0))}
+.stat-strip-sm{margin:0 0 0.75rem!important}
+.stat-strip-sm .stat-num{font-size:26px}
+.stat-strip-sm .stat-cell{padding:0.65rem 0.5rem}
+.prec-note{margin:0;font-size:12px;color:var(--txt3);line-height:1.65}
+.prec-note a{color:var(--o);text-decoration:none;border-bottom:1px solid rgba(232,90,12,0.35)}
+.apply{margin-top:1rem;padding-left:0.95rem;border-left:2px solid var(--o)}
+.apply-label{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--o);margin-bottom:0.42rem}
+.apply p{margin:0 0 0.45rem;font-size:13.5px;color:var(--txt2);line-height:1.7}
+.apply p:last-child{margin-bottom:0}
+.apply-names{font-size:12.5px!important;color:var(--txt3)!important}
+.apply-names strong{color:var(--txt);font-weight:500}
+@media(max-width:640px){.prec-spec{grid-template-columns:1fr;gap:0.15rem}
+  .prec-spec dt{padding-top:6px}}
+
+</style>
+</head>
+<body>
+<div id="wrap">
+
+  <nav class="topbar">
+    <a class="topbar-brand" href="https://www.talexmedia.com" target="_blank">
+      <img class="topbar-logo"
+        src="https://static.wixstatic.com/media/3c6878_456d81e9cdb84e6c8bb3260ebfcc0523~mv2.png"
+        alt="Talex Media"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'"
+      />
+      <span class="topbar-name" style="display:none">TALEX MEDIA</span>
+    </a>
+    <div class="topbar-right">
+      <a class="topbar-cta" href="https://calendly.com/d/ct7b-xvd-c9x/intro-call" target="_blank" rel="noopener">Book a Call</a>
+    </div>
+  </nav>
+
+  <section class="vsl-intro">
+    <style>
+      .vsl-intro{margin:1.75rem 0 0}
+      .vsl-intro .vsl-eyebrow{font-family:'Oswald',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--o);margin-bottom:0.6rem;display:flex;align-items:center;gap:8px}
+      .vsl-intro .vsl-eyebrow::before{content:"\25B6";font-size:10px}
+      .vsl-intro .vsl-frame{position:relative;width:100%;padding-top:56.25%;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#000}
+      .vsl-intro .vsl-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+    <div class="vsl-eyebrow" data-fid="f001">Watch First · A Short Intro From Tom</div>
+    <div class="vsl-frame">
+      <iframe src="https://player.vimeo.com/video/1199563685?h=9a37ee9528&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Talex Mini VSL"></iframe>
+    </div>
+  </section>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <header class="hero">
+    <div class="brand-mark-row">
+      <div class="brand-logo-wrap">
+        <img src="assets/logo.svg" alt="Trailborn Hotels &amp; Resorts logo"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+        <span class="brand-logo-fallback" style="display:none">TB</span>
+      </div>
+      <div class="hero-step" style="margin-bottom:0">
+        <div class="step-pill" data-fid="f002">A Custom Strategy For Trailborn Hotels &amp; Resorts</div>
+        <span class="hero-eyebrow" data-fid="f003">Amanda Kusek · Prepared October 2026</span>
+      </div>
+    </div>
+    <h1 class="disp hero-title" data-fid="f004">A Custom Look<br/>At Your Video Content Presence</h1>
+    <div class="italic hero-tagline" data-talex-scope="personalized" data-fid="f005">This is a high-level view from Talex Media on how video could introduce Trailborn's destinations and help travelers plan what to do during a stay.</div>
+  </header>
+
+  <div class="stat-strip" data-talex-scope="personalized">
+    <div class="stat-cell">
+      <div class="stat-num" data-fid="f006">5</div>
+      <div class="stat-label" data-fid="f007">Destinations Featured</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" data-fid="f008">4</div>
+      <div class="stat-label" data-fid="f009">States Represented</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" data-fid="f010">2</div>
+      <div class="stat-label" data-fid="f011">Coastal Destinations</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p data-fid="f012">"Every Trailborn hotel and resort is one-of-a-kind and tells the story of its place."</p>
+    <div class="callout-attr" data-fid="f013">Trailborn Hotels &amp; Resorts · <a href="https://www.trailborn.com/about/" target="_blank" rel="noopener">Trailborn About</a></div>
+  </div>
+
+  <div class="byline">
+    <div class="byline-avatar">
+      <img src="https://static.wixstatic.com/media/3c6878_f5b394fdd9fb45c98fc7e838f91ea231~mv2.jpg" alt="Tom Langan"
+           onerror="this.style.display='none'; this.parentElement.textContent='TL'" />
+    </div>
+    <div class="byline-body">
+      <div class="byline-name" data-fid="f014">Prepared by Tom Langan · Founder, Talex Media</div>
+      <div class="byline-sub" data-fid="f015">Author of <em>Legendeering</em></div>
+    </div>
+    <a class="byline-imdb" href="https://www.imdb.com/name/nm5209355/" target="_blank" rel="noopener" aria-label="Tom Langan on IMDb">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg" alt="IMDb"/>
+    </a>
+  </div>
+
+  <div class="trust-strip">
+    <img class="trust-logo discovery" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Discovery_Channel_-_Logo_2019.svg" alt="Discovery"/>
+    <img class="trust-logo nbc" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/NBCUniversal_Logo.svg" alt="NBCUniversal"/>
+    <img class="trust-logo bbc" src="https://upload.wikimedia.org/wikipedia/commons/4/41/BBC_Logo_2021.svg" alt="BBC"/>
+    <span class="trust-emmy"><span class="n">2×</span><span class="t">Emmy Award Nominee</span></span>
+  </div>
+
+  <div class="section-block">
+    <p data-talex-scope="personalized" data-fid="f016">Amanda, I'm Tom Langan. I had a look at what Trailborn has been putting into the world, from the video on your homepage to the property news on LinkedIn, and wanted to send a short note from a production shop to a hotel brand built around outdoor destinations.</p>
+    <p data-fid="f017">I've spent 25 years in video and television production as a Director of Photography, Producer, and Showrunner, earning two Emmy nominations and leading multi-million dollar productions for global broadcasters like the BBC, NBCUniversal, and Discovery filming all over the world from the Arctic Circle to sub-Saharan Africa.</p>
+    <p data-fid="f018"><strong>My job was, and still is, to make video that people actually want to watch.</strong></p>
+    <p data-fid="f019">In order to do this (create audience first content that leaves people feeling good about supporting your brand and your mission) we need to always take your broader public footprint into account. What follows here is our honest take on what we saw, and where we'd start if we were working together.</p>
+  </div>
+
+  <div class="whats-inside" data-talex-scope="personalized">
+    <h2 class="wi-heading" data-fid="f020">What's Inside</h2>
+    <div class="whats-inside-grid">
+      <a class="wi-card" href="#sec-surface">
+        <div class="wi-num">01</div>
+        <div class="wi-title" data-fid="f021">Where Your Video Lives Today</div>
+        <div class="wi-desc" data-fid="f022">A look at Trailborn's website, YouTube presence and LinkedIn page.</div>
+      </a>
+      <a class="wi-card" href="#sec-worlds">
+        <div class="wi-num">02</div>
+        <div class="wi-title" data-fid="f023">Proof-Led Concepts</div>
+        <div class="wi-desc" data-fid="f024">Two formats Trailborn could use, with examples from other brands.</div>
+      </a>
+      <a class="wi-card" href="#sec-strategy">
+        <div class="wi-num">03</div>
+        <div class="wi-title" data-fid="f025">Lead With Value</div>
+        <div class="wi-desc" data-fid="f026">The Legendeering framework explains the approach behind these ideas.</div>
+      </a>
+      <a class="wi-card" href="#sec-films">
+        <div class="wi-num">04</div>
+        <div class="wi-title" data-fid="f027">Past Talex Films</div>
+        <div class="wi-desc" data-fid="f028">Past Talex projects show how the work takes shape on screen.</div>
+      </a>
+      <a class="wi-card" href="#sec-faq">
+        <div class="wi-num">FAQ</div>
+        <div class="wi-title" data-fid="f029">A Few Questions</div>
+        <div class="wi-desc" data-fid="f030">What you might be wondering</div>
+      </a>
+    </div>
+  </div>
+
+  <hr class="rule-orange"/>
+
+  <div class="section-intro" id="sec-surface">
+    <div class="section-intro-row">
+      <span class="sec-pill-orange">01</span>
+      <span class="section-eyebrow" data-fid="f031">Where You Show Up</span>
+    </div>
+    <h2 class="section-title" data-fid="f032">Where Your Video Lives Today</h2>
+    <p class="section-subtitle" data-talex-scope="personalized" data-fid="f033">Trailborn's public channels show its destinations, property news and the thinking behind the brand.</p>
+  </div>
+
+  <div class="channel-grid">
+
+    <div class="channel-card">
+      <a class="channel-link" href="https://www.trailborn.com/" target="_blank" rel="noopener" aria-label="Visit Trailborn website"></a>
+      <div class="channel-icon website">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <div class="channel-body">
+        <div class="channel-head">
+          <span class="channel-name" data-fid="f034">Website</span>
+          <span class="channel-handle" data-fid="f035">trailborn.com</span>
+        </div>
+        <div class="channel-snippet" data-talex-scope="personalized" data-fid="f036">
+          <ul>
+            <li>The homepage opens with video.</li>
+            <li>The property pages describe activities such as movie nights at Grand Canyon's Camp Hall and duckpin bowling at Jackson Hole.</li>
+          </ul>
+          <a class="source-link" href="https://www.trailborn.com/" target="_blank" rel="noopener">trailborn.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-card">
+      <a class="channel-link" href="https://www.youtube.com/watch?v=t5PWuCYNvQ0" target="_blank" rel="noopener" aria-label="Watch Trailborn interview on YouTube"></a>
+      <div class="channel-icon youtube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </div>
+      <div class="channel-body">
+        <div class="channel-head">
+          <span class="channel-name" data-fid="f037">YouTube</span>
+          <span class="channel-handle" data-fid="f038">Third-party interview</span>
+        </div>
+        <div class="channel-snippet" data-talex-scope="personalized" data-fid="f039">
+          <ul>
+            <li>Michael Weiss discusses Trailborn on <em>The Modern Hotelier</em>, with the full interview available on YouTube.</li>
+          </ul>
+          <a class="source-link" href="https://podcasts.apple.com/us/podcast/204-how-trailborn-is-bringing-design-forward-hotels/id1618543533?i=1000724525437" target="_blank" rel="noopener">The Modern Hotelier, episode 204</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="channel-card">
+      <a class="channel-link" href="https://www.linkedin.com/company/trailborn/" target="_blank" rel="noopener" aria-label="Visit Trailborn on LinkedIn"></a>
+      <div class="channel-icon linkedin">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </div>
+      <div class="channel-body">
+        <div class="channel-head">
+          <span class="channel-name" data-fid="f040">LinkedIn (Company)</span>
+          <span class="channel-handle" data-fid="f041">company/trailborn</span>
+        </div>
+        <div class="channel-snippet" data-talex-scope="personalized" data-fid="f042">
+          <ul>
+            <li>Trailborn's company page shares property openings, design coverage and hiring updates.</li>
+          </ul>
+          <a class="source-link" href="https://www.linkedin.com/company/trailborn/" target="_blank" rel="noopener">linkedin.com</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="rule-orange"/>
+
+  <div class="section-intro" id="sec-worlds">
+    <div class="section-intro-row">
+      <span class="sec-pill-orange">02</span>
+      <span class="section-eyebrow" data-fid="f043">Two Concepts For Trailborn Hotels & Resorts</span>
+    </div>
+    <h2 class="section-title" data-fid="f044">Two Opportunities to Grow Your Audience</h2>
+    <p class="section-subtitle" data-talex-scope="personalized" data-fid="f045">A documentary about people connected to Trailborn's destinations, and a short comedy about how people spend a getaway.</p>
+  </div>
+
+  <div class="ideas-grid">
+
+    <div class="idea-card idea-card-featured">
+      <div class="idea-num">01</div>
+      <div class="idea-body">
+        <div class="scale-label" data-fid="f046">Long-Form Episodic &middot; Flagship, ongoing</div>
+        <div class="idea-title" data-fid="f047">A returning documentary series</div>
+        <div class="prec"><div class="prec-label" data-fid="f048">The format, and a company that has already run it</div><dl class="prec-spec"><dt data-fid="f049">Format</dt><dd data-fid="f050">A docuseries featuring one real person per episode, telling their own story.</dd><dt data-fid="f051">Entertainment reference</dt><dd data-fid="f052"><em>Parts Unknown</em> (the Anthony Bourdain travel series that visited one place per episode)</dd><dt data-fid="f053">A company that did it</dt><dd data-fid="f054">YETI, <em>YETI Presents</em>. A cooler company built a library of short documentaries about the people who use its gear</dd><dt data-fid="f055">Episode length</dt><dd data-fid="f056">10-20 minutes per episode</dd></dl><div class="proj-video-embed video-facade" data-yt="OmrufRLGdAk" role="button" tabindex="0" aria-label="Play video: YETI Presents, A Thousand Casts"><img class="vf-thumb" src="https://i.ytimg.com/vi/OmrufRLGdAk/hqdefault.jpg" alt="" onerror="this.style.display='none'"><span class="vf-play" aria-hidden="true"></span><span class="vf-title">A Thousand Casts &middot; YETI Presents</span></div><div class="stat-strip stat-strip-sm"><div class="stat-cell"><div class="stat-num" data-fid="f057">1,344,426</div><div class="stat-label" data-fid="f058">Views On The Top Film</div></div><div class="stat-cell"><div class="stat-num" data-fid="f059">90</div><div class="stat-label" data-fid="f060">Films In The Library</div></div><div class="stat-cell"><div class="stat-num" data-fid="f061">37.6M</div><div class="stat-label" data-fid="f062">Views Across The Library</div></div></div><p class="prec-note" data-fid="f063">YETI has published 90 of these films. The one above runs 28 minutes and is the most watched of all of them. Runtime and view count read from YouTube on 24 August 2026. <a href="https://www.youtube.com/watch?v=OmrufRLGdAk" target="_blank" rel="noopener">Watch the film</a></p></div>
+        <div class="apply" data-talex-scope="personalized"><div class="apply-label" data-fid="f064">How Trailborn Hotels & Resorts could use it</div><p data-fid="f065">Trailborn could build a documentary series around people whose work is tied to its destinations. A film could follow a local resident's relationship with the coast around Mendocino or the outdoors around Williams, letting that person's experience shape the story. The same approach could continue in another Trailborn destination, with a different person and a different account of life there.</p></div>
+        <div class="why-block" data-talex-scope="personalized"><div class="why-label" data-fid="f066">Why a documentary series fits Trailborn's destinations</div><div class="why-list"><div class="why-item" data-fid="f067"><span><strong>Place is part of Trailborn's identity.</strong> The brand describes its hotels as telling the story of their location. A documentary could explore that connection through a person's experience.</span></div><div class="why-item" data-fid="f068"><span><strong>The destinations offer different subjects.</strong> Mendocino's coast and Highlands' mountain setting could give successive films different surroundings while keeping the focus on a person's relationship with a place.</span></div><div class="why-item" data-fid="f069"><span><strong>Trailborn connects a stay to things to do.</strong> Its restaurants and excursions could inform the choice of documentary subjects. The films could explore interests travelers could pursue during a visit.</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="idea-card">
+      <div class="idea-num">02</div>
+      <div class="idea-body">
+        <div class="scale-label" data-fid="f070">Short-Form Episodic &middot; Scripted comedy, under 2 minutes</div>
+        <div class="idea-title" data-fid="f071">A short scripted comedy</div>
+        <div class="prec"><div class="prec-label" data-fid="f072">The format, and a company that has already run it</div><dl class="prec-spec"><dt data-fid="f073">Format</dt><dd data-fid="f074">A short form scripted series designed to be easy to consume on the go (aka a Taco Drama) following a standard sitcom format.</dd><dt data-fid="f075">Entertainment reference</dt><dd data-fid="f076"><em>Abbott Elementary</em> (the comedy set in a Philadelphia public school) and <em>Superstore</em> (the sitcom where a store's staff face one absurd situation per episode).</dd><dt data-fid="f077">A company that did it</dt><dd data-fid="f078">Albertsons with Procter &amp; Gamble, <em>Rico's Tacos</em>. A scripted series written for a phone screen and for the display above the checkout, running on channels the company owns.</dd><dt data-fid="f079">Episode length</dt><dd data-fid="f080">1-2 minutes per episode</dd></dl><div class="proj-video-embed video-facade" data-yt="PeUsXJ4ccXY" role="button" tabindex="0" aria-label="Play video: Rico's Tacos Episode 1, Flavor Has a Price"><img class="vf-thumb" src="https://i.ytimg.com/vi/PeUsXJ4ccXY/hqdefault.jpg" alt="" onerror="this.style.display='none'"><span class="vf-play" aria-hidden="true"></span><span class="vf-title">Episode 1, Flavor Has a Price &middot; Rico's Tacos</span></div><div class="stat-strip stat-strip-sm"><div class="stat-cell"><div class="stat-num" data-fid="f081">200,363</div><div class="stat-label" data-fid="f082">Views, Episode One</div></div><div class="stat-cell"><div class="stat-num" data-fid="f083">940K</div><div class="stat-label" data-fid="f084">Views, All Episodes</div></div><div class="stat-cell"><div class="stat-num" data-fid="f085">17 of 22</div><div class="stat-label" data-fid="f086">Episodes Out So Far</div></div></div><p class="prec-note" data-fid="f087">Albertsons runs it on YouTube, on social, and on the screens inside its stores, and the app lets you buy what you just watched. For a longer-form comparison, the accounting software company FloQast makes <em>PBC</em>, a scripted workplace comedy about auditors whose first episode runs 22 minutes and has 213,014 views. Counts read from YouTube on 24 August 2026. <a href="https://www.youtube.com/watch?v=PeUsXJ4ccXY" target="_blank" rel="noopener">Rico's Tacos</a> &middot; <a href="https://www.youtube.com/playlist?list=PLp0NhJVOmekheBEcUibmqdlj0RIT2J4vr" target="_blank" rel="noopener">FloQast PBC</a></p></div>
+        <div class="apply" data-talex-scope="personalized"><div class="apply-label" data-fid="f088">How Trailborn Hotels & Resorts could use it</div><p data-fid="f089">Trailborn could use a short scripted comedy to explore the different ways people want to spend an outdoor getaway. The humor could come from choosing between an active day and time to relax, with returning characters bringing different preferences to those decisions. Trailborn's combination of outdoor destinations and activities at the hotel could inform the situations across the series.</p></div>
+        <div class="why-block" data-talex-scope="personalized"><div class="why-label" data-fid="f090">Why a travel comedy could fit Trailborn</div><div class="why-list"><div class="why-item" data-fid="f091"><span><strong>The stay offers choices beyond the outdoor excursion.</strong> Jackson Hole lists pool days, duckpin bowling and live music. That variety could give a comedy specific choices for its characters to disagree about.</span></div><div class="why-item" data-fid="f092"><span><strong>Relaxation is part of Trailborn's offer.</strong> Its About page describes time to unwind after an adventure. A comedy could find humor in different ideas about the right balance of activity and rest.</span></div><div class="why-item" data-fid="f093"><span><strong>Trailborn already has social channels.</strong> Its official directory links to Instagram, Facebook and TikTok, where short episodes could become a recurring part of the brand's video output.</span></div></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="rule-orange"/>
+
+  <div class="section-intro" id="sec-strategy">
+    <div class="section-intro-row">
+      <span class="sec-pill-orange">03</span>
+      <span class="section-eyebrow" data-fid="f094">Lead With Value</span>
+    </div>
+    <h2 class="section-title" data-fid="f095">The Legendeering Framework</h2>
+    <p class="section-subtitle" data-fid="f096">The methodology behind every Talex production, and behind the two concepts above. Five directives, one core principle.</p>
+  </div>
+
+  <div class="section-block">
+    <p data-fid="f097">Legendeering is Talex's proprietary strategy. The core principle is straightforward: lead with value, always. The brand earns trust by giving without expectation, and that trust grows over time because people keep choosing to watch.</p>
+    <p data-fid="f098">Five directives drive it:</p>
+    <ul class="dir-list">
+      <li class="dir-item"><span class="dir-icon"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span><span data-fid="f099"><strong>Give Without Expectation.</strong> Value delivered without strings. The kind of generosity that builds loyalty money cannot buy.</span></li>
+      <li class="dir-item"><span class="dir-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><span data-fid="f100"><strong>Be Relentlessly Authentic.</strong> Say true things. Show real work. Speak like a human being.</span></li>
+      <li class="dir-item"><span class="dir-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span data-fid="f101"><strong>It's Not About You. It's About Them.</strong> The audience has to come first. It's all about their wants and needs and making something they will choose to watch.</span></li>
+      <li class="dir-item"><span class="dir-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span data-fid="f102"><strong>Start With Story, Follow With Facts.</strong> Story gives information shape, context, and emotional weight. Facts alone rarely move people.</span></li>
+      <li class="dir-item"><span class="dir-icon"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span><span data-fid="f103"><strong>Consistency Is Key.</strong> Trust is built in moments, repeated over time.</span></li>
+    </ul>
+    <p data-fid="f104">Legendeering is not limited to the formats described above. Talex produces video for a variety of clients, across a range of industries in all available formats.</p>
+  </div>
+
+  <div class="cred-row">
+    <span class="cred-chip" data-fid="f105">2x Emmy Nominated</span>
+    <span class="cred-chip" data-fid="f106">25 Years Production</span>
+    <span class="cred-chip" data-fid="f107">100+ Hours Distributed Globally</span>
+    <span class="cred-chip" data-fid="f108">BBC · NBC · Discovery · ABC · Netflix</span>
+  </div>
+
+  <hr class="rule-orange"/>
+
+  <div class="section-intro" id="sec-films">
+    <div class="section-intro-row">
+      <span class="sec-pill-dark">04</span>
+      <span class="section-eyebrow" data-fid="f109">A Few Films Talex Has Made</span>
+    </div>
+    <h2 class="section-title" data-fid="f110">Three Projects Across Three Industries</h2>
+    <p class="section-subtitle" data-fid="f111">Same craft, same methodology, three very different jobs.</p>
+  </div>
+
+  <div class="case-card">
+    <div class="cs-label">Case Study 01 · Enterprise</div>
+    <div class="cs-name" data-fid="f112">Resorts World New York City</div>
+    <div class="cs-stat-strip">
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f113">$5.5B</div>
+        <div class="cs-stat-label" data-fid="f114">Site development investment</div>
+      </div>
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f115">10+</div>
+        <div class="cs-stat-label" data-fid="f116">Video pieces produced</div>
+      </div>
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f117">Dec '25</div>
+        <div class="cs-stat-label" data-fid="f118">Gaming license awarded</div>
+      </div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f119">The Challenge</div>
+      <div class="cs-section-body" data-fid="f120">In 2025, Resorts World International launched a high-stakes public campaign to secure a New York City commercial gaming license and advance their $5.5B investment to transform their existing casino at Aqueduct Racetrack into a full-scale integrated resort. Their communications needed to be credible, compelling, and precise.</div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f121">The Approach</div>
+      <div class="cs-section-body" data-fid="f122">Talex Media produced more than 10 distinct pieces of video content spanning community impact narratives, stakeholder communications, and public-facing advocacy. Each piece was built on a story-first foundation designed to move people, not just inform them.</div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f123">The Result</div>
+      <div class="cs-section-body" data-fid="f124">On December 15, 2025, the NY State Gaming Commission awarded Resorts World NYC one of only three downstate commercial gaming licenses. Talex Media's content supported one of the most consequential licensing decisions in NYC's recent history.</div>
+    </div>
+    <div class="cs-video-embed">
+      <iframe src="https://player.vimeo.com/video/1197837461?h=b1f296a8c1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen loading="lazy" title="Resorts World NYC · Featured Video"></iframe>
+    </div>
+    <div class="cs-footer-meta" data-fid="f125">NYC Gaming License Awarded Dec 15, 2025 · 10+ Videos Produced · $5.5B Investment · Spring 2026 Opening</div>
+  </div>
+
+  <div class="case-card">
+    <div class="cs-label">Case Study 02 · Growth Brand</div>
+    <div class="cs-name" data-fid="f126">Sobo & Sobo LLP</div>
+    <div class="cs-stat-strip">
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f127">2020</div>
+        <div class="cs-stat-label" data-fid="f128">Partnership begin date</div>
+      </div>
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f129">7</div>
+        <div class="cs-stat-label" data-fid="f130">States with Sobo offices</div>
+      </div>
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f131">5+</div>
+        <div class="cs-stat-label" data-fid="f132">Years of ongoing campaigns</div>
+      </div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f133">The Challenge</div>
+      <div class="cs-section-body" data-fid="f134">In 2020, Sobo & Sobo, a New York-based personal injury law firm, engaged Talex Media. They needed commercial video campaigns that could anchor their brand, differentiate them in a competitive legal market, and fuel their growth ambitions across new markets.</div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f135">The Approach</div>
+      <div class="cs-section-body" data-fid="f136">Since 2020, Talex Media has produced all of Sobo & Sobo's commercial video campaigns, an ongoing, multi-year embedded partnership bringing brand consistency, strategic communication, and production quality to every new market they enter.</div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f137">The Result</div>
+      <div class="cs-section-body" data-fid="f138">Since the partnership began, Sobo & Sobo has grown from a NY-focused firm into a multi-state legal practice with offices in NY, CT, NJ, IL, OH, PA, and WI. Talex Media's campaigns have accompanied every stage of that expansion.</div>
+    </div>
+    <div class="cs-video-embed">
+      <iframe src="https://player.vimeo.com/video/1197837545?h=26cd419847" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen loading="lazy" title="Sobo &amp; Sobo · Featured Video"></iframe>
+    </div>
+    <div class="cs-footer-meta" data-fid="f139">5+ Year Partnership · All Commercial Campaigns · 7 States: NY, CT, NJ, IL, OH, PA, WI</div>
+  </div>
+
+  <div class="case-card">
+    <div class="cs-label">Case Study 03 · Nonprofit</div>
+    <div class="cs-name" data-fid="f140">Elizabeth Seton Children's</div>
+    <div class="cs-stat-strip">
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f141">96</div>
+        <div class="cs-stat-label" data-fid="f142">Beds in new young adult center</div>
+      </div>
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f143">$156M</div>
+        <div class="cs-stat-label" data-fid="f144">Project investment</div>
+      </div>
+      <div class="cs-stat-cell">
+        <div class="cs-stat-num" data-fid="f145">2025</div>
+        <div class="cs-stat-label" data-fid="f146">Year of groundbreaking</div>
+      </div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f147">The Challenge</div>
+      <div class="cs-section-body" data-fid="f148">In 2020, Elizabeth Seton Children's launched a capital campaign to fund a $156 million young adult care facility for patients aging out of their pediatric program. They needed video content that would inspire donors, communicate urgency, and sustain momentum across a multi-year campaign.</div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f149">The Approach</div>
+      <div class="cs-section-body" data-fid="f150">Talex Media produced multiple pieces of informational, inspirational, and commercial fundraising content across the campaign lifecycle. Each piece was designed to give donors a genuine connection to the mission and the people it serves, not just a request for money.</div>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-label" data-fid="f151">The Result</div>
+      <div class="cs-section-body" data-fid="f152">In August 2025, Elizabeth Seton Children's broke ground on their new 96-bed young adult center in White Plains, NY, the first standalone facility of its kind in the United States, providing care for young adults aged 18 to 35 with complex medical needs. The facility is expected to open in January 2028.</div>
+    </div>
+    <div class="cs-video-embed">
+      <iframe src="https://player.vimeo.com/video/1197837295?h=1a1b3c715b" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen loading="lazy" title="Elizabeth Seton Children's · Featured Video"></iframe>
+    </div>
+    <div class="cs-footer-meta" data-fid="f153">First standalone young adult complex-care facility in the U.S. · 96 beds · $156M · Groundbreaking Aug 2025</div>
+  </div>
+
+  <div class="cred-row">
+    <span class="cred-chip" data-fid="f154">2x Emmy Nominated</span>
+    <span class="cred-chip" data-fid="f155">25 Years Experience</span>
+    <span class="cred-chip" data-fid="f156">100+ Hours Distributed Globally</span>
+    <span class="cred-chip" data-fid="f157">BBC · Discovery · NBC Universal</span>
+  </div>
+
+  <hr class="rule-orange"/>
+
+  <div class="cta-block">
+    <div class="cta-eyebrow" data-fid="f158">An Intro Call With Our Team</div>
+    <h2 class="disp cta-headline" data-fid="f159">Let's Connect</h2>
+    <p class="cta-sub" data-fid="f160">A short call to walk through what's in this audit, answer whatever you want to ask, and find out whether there's a fit. Nothing is sold on the call.</p>
+    <a class="cta-primary" href="https://calendly.com/d/ct7b-xvd-c9x/intro-call" target="_blank" rel="noopener">Book A Call With Our Team →</a>
+    <div class="cta-reply" data-fid="f161">Or just reply on LinkedIn and tell me what you actually thought. Happy to send you a copy of <em>Legendeering</em> if you'd like to read the longer version of the philosophy in section 03.</div>
+  </div>
+
+  <hr class="rule-orange"/>
+
+  <div class="section-intro" id="sec-faq">
+    <div class="section-intro-row">
+      <span class="sec-pill-dark">FAQ</span>
+      <span class="section-eyebrow" data-fid="f162">A Few Questions You Might Have</span>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" data-fid="f163">What does a call with Talex look like?</div>
+    <div class="faq-a" data-fid="f164">Fifteen minutes. We walk through this document, I answer whatever you want to ask, and we find out if there's a fit. Nothing is sold on the call.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-fid="f165">How custom is this audit?</div>
+    <div class="faq-a" data-fid="f166">Everything in this document is based on your actual public presence. I don't send the same deck to different companies, this one was prepared specifically for Trailborn Hotels &amp; Resorts.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-fid="f167">What happens after the call?</div>
+    <div class="faq-a" data-fid="f168">If there's a fit, we send a formal proposal tailored to your team, your community, and the goals you described. If not, you leave with a clearer picture of your content opportunity and I wish you well.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-fid="f169">How is your approach different from a typical video agency?</div>
+    <div class="faq-a" data-fid="f170">We start with the community, not the camera. Before any production decision, we map who you're speaking to, what they need from you, and what shift we're trying to produce in them. Format and craft follow from there.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-fid="f171">Do you only work with certain industries?</div>
+    <div class="faq-a" data-fid="f172">At Talex, we don’t limit our focus to one vertical or industry, because industry-specific thinking leads to uniform outputs and our goal is to help our clients stand out from their competition.<br><br>Ultimately, a cross-disciplinary perspective forces innovation and creates more original ideas. Because we are not tied to the conventions of one industry, we can do a better job of helping you create content authentic to your brand and valuable to your audience. So you stand out and remain top of mind for your customers.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-fid="f173">We already have a marketing team. Why should we work with Talex?</div>
+    <div class="faq-a" data-fid="f174">Perfect, that's actually how we prefer to work. Talex Media isn't a marketing agency. We're a video production company in the documentary and broadcast tradition. A strong marketing team brings audience clarity, channel strategy, and distribution. We bring the films that give them something worth distributing: customer hero pieces, episodic series, founder content built to a broadcast standard.</div>
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-brand">Talex Media</span>
+    <div class="footer-links">
+      <a href="https://www.talexmedia.com" target="_blank">talexmedia.com</a>
+      <a href="mailto:solutions@talexmedia.com">solutions@talexmedia.com</a>
+      <a href="https://calendly.com/d/ct7b-xvd-c9x/intro-call" target="_blank">Book a Call</a>
+    </div>
+    <div class="footer-copy" data-fid="f175">© 2026 Talex Media LLC · A Custom Strategy prepared for Trailborn Hotels &amp; Resorts · October 2026</div>
+  </footer>
+
+</div>
+
+<script>
+function poke(){
+  try { window.parent.postMessage({ type:"wix-iframe-height", height: document.documentElement.scrollHeight }, "*"); } catch(e){}
+}
+window.addEventListener("load", function(){
+  if (window.ResizeObserver) new ResizeObserver(poke).observe(document.body);
+  poke();
+});
+</script>
+
+
+<script>
+(function(){
+  function load(el){
+    if(el.getAttribute("data-loaded")) return;
+    var id = el.getAttribute("data-yt");
+    var f = document.createElement("iframe");
+    f.setAttribute("src","https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0");
+    f.setAttribute("title","Video player");
+    f.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+    f.setAttribute("allowfullscreen","");
+    el.innerHTML = ""; el.appendChild(f); el.setAttribute("data-loaded","1");
+  }
+  document.querySelectorAll(".video-facade").forEach(function(el){
+    el.addEventListener("click", function(){ load(el); });
+    el.addEventListener("keydown", function(ev){
+      if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); load(el); }
+    });
+  });
+})();
+</script>
+<!-- tm-shared-edit:start -->
+<style>
+#tm-edit{position:fixed;right:16px;top:16px;z-index:9999;display:flex;gap:8px;align-items:center;font-family:'Oswald','DM Sans',system-ui,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+#tm-edit button,#tm-edit .tm-s{border:0;border-radius:999px;padding:8px 14px;background:rgba(26,24,22,.88);color:#EDE7DF;font:inherit;letter-spacing:inherit;text-transform:inherit;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+#tm-edit button{cursor:pointer}
+#tm-edit button:hover{background:#1A1816;color:#fff}
+#tm-edit .tm-toggle.on,#tm-edit .tm-retry{background:#E85A0C;color:#fff}
+#tm-edit .tm-s.ok{color:#8FD3A8}
+#tm-edit .tm-s.bad{background:#7a2414;color:#fff}
+#tm-edit .tm-s.warn{background:#8a5a00;color:#fff}
+#tm-edit [hidden]{display:none}
+body.tm-editing [data-fid]{outline:1px dashed rgba(232,90,12,.5);outline-offset:3px;border-radius:3px;cursor:text}
+body.tm-editing [data-fid]:focus{outline:2px solid #E85A0C;background:rgba(232,90,12,.05)}
+body.tm-editing [data-fid].tm-conflict-field{outline:2px solid #d0661c;background:rgba(208,102,28,.08)}
+#tm-conflict{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;width:min(720px,calc(100vw - 32px));background:#1A1816;color:#EDE7DF;border-top:3px solid #E85A0C;border-radius:14px;padding:14px 16px;box-shadow:0 18px 44px rgba(0,0,0,.35);font-family:'DM Sans',system-ui,sans-serif;font-size:14px;line-height:1.45}
+#tm-conflict[hidden]{display:none}
+#tm-conflict .tm-ch{font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#f7a46d;margin-bottom:10px}
+#tm-conflict .tm-cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+#tm-conflict .tm-col{background:rgba(255,255,255,.05);border-radius:10px;padding:10px 12px;max-height:24vh;overflow:auto}
+#tm-conflict .tm-cl{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#a89e96;margin-bottom:4px}
+#tm-conflict a{color:inherit}
+#tm-conflict .tm-ca{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+#tm-conflict button{cursor:pointer;border:1px solid #5a5048;background:transparent;color:#EDE7DF;border-radius:999px;padding:7px 14px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+#tm-conflict button.primary{background:#E85A0C;border-color:#E85A0C;color:#fff}
+@media(max-width:560px){#tm-edit{top:auto;bottom:12px;right:12px}#tm-conflict .tm-cmp{grid-template-columns:1fr}}
+@media print{#tm-edit,#tm-conflict{display:none!important}body.tm-editing [data-fid]{outline:0}}
+body.tm-editing .channel-link{pointer-events:none}
+body.tm-editing .channel-card [data-fid]{position:relative;z-index:2}
+</style>
+<script>
+/* Talex shared editing: one link for Tom, Evan and the client.
+   Injected by tools/shared-edit.py on, removed by tools/shared-edit.py off.
+   Each text field (data-fid) saves on its own to /drafts/<KEY>/fields/<fid> with a
+   compare-and-set (ETag + rev), so two editors never silently overwrite each other.
+   Saved text is rebuilt through an allowlist, never injected as raw HTML.
+   Unsaved work stays in localStorage until the server confirms it. */
+(function(){
+  var CFG={"db": "https://talex-media-default-rtdb.firebaseio.com", "key": "trailborn-ded1b3077500936d", "build": "d402d3a151ad", "tags": ["a", "b", "br", "em", "i", "li", "span", "strong", "ul"], "classes": ["source-link"]};
+  var DB=CFG.db, KEY=CFG.key, FIELDS=DB+'/drafts/'+KEY+'/fields';
+  var LS_DRAFT='talex-edit-draft:'+KEY+':'+CFG.build, LS_CACHE='talex-edit-cache:'+KEY+':'+CFG.build, LS_CLIENT='talex-edit-client';
+  var TAGS={},CLASSES={};CFG.tags.forEach(function(t){TAGS[t.toUpperCase()]=1});CFG.classes.forEach(function(c){CLASSES[c]=1});
+  var DROP={SCRIPT:1,STYLE:1,IFRAME:1,OBJECT:1,EMBED:1,TEMPLATE:1,SVG:1,IMG:1,VIDEO:1,AUDIO:1,LINK:1,META:1,FORM:1,INPUT:1,BUTTON:1,TEXTAREA:1,SELECT:1};
+  var SAFE_HREF=/^(https?:|mailto:|#)/i;
+
+  function lsGet(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}}
+  function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}
+  function rand(){var a=new Uint8Array(8);try{crypto.getRandomValues(a)}catch(e){for(var j=0;j<8;j++)a[j]=Math.random()*256|0}return Array.prototype.map.call(a,function(b){return('0'+b.toString(16)).slice(-2)}).join('')}
+  var CLIENT=(function(){try{var c=localStorage.getItem(LS_CLIENT);if(!c){c=rand();localStorage.setItem(LS_CLIENT,c)}return c}catch(e){return rand()}})();
+
+  /* ---------- safe text ---------- */
+  function copyClean(src,dst){
+    for(var n=src.firstChild;n;n=n.nextSibling){
+      if(n.nodeType===3){dst.appendChild(document.createTextNode(n.nodeValue));continue}
+      if(n.nodeType!==1)continue;
+      var tag=n.tagName.toUpperCase();
+      if(DROP[tag])continue;
+      if(!TAGS[tag]){copyClean(n,dst);continue}
+      var e=document.createElement(tag.toLowerCase());
+      var cls=[];(n.getAttribute('class')||'').split(/\s+/).forEach(function(c){if(CLASSES[c])cls.push(c)});
+      if(cls.length)e.className=cls.join(' ');
+      if(tag==='SPAN'&&n.getAttribute('data-talex-quote')==='verified')e.setAttribute('data-talex-quote','verified');
+      if(tag==='A'){var h=n.getAttribute('href')||'';if(SAFE_HREF.test(h.trim())){e.setAttribute('href',h.trim());if(!/^#/.test(h.trim())){e.setAttribute('target','_blank');e.setAttribute('rel','noopener')}}}
+      copyClean(n,e);dst.appendChild(e);
+    }
+  }
+  function serialize(el){var d=document.createElement('div');copyClean(el,d);return d.innerHTML}
+  function render(el,html){
+    var doc=new DOMParser().parseFromString('<!doctype html><body>'+String(html),'text/html');
+    var frag=document.createDocumentFragment();copyClean(doc.body,frag);
+    while(el.firstChild)el.removeChild(el.firstChild);el.appendChild(frag);
+  }
+
+  /* ---------- fields ---------- */
+  var F={},order=[];
+  [].forEach.call(document.querySelectorAll('[data-fid]'),function(el){
+    var fid=el.getAttribute('data-fid');
+    F[fid]={fid:fid,el:el,rev:0,synced:serialize(el),dirty:false,saving:false,timer:null,conflict:null,error:null};order.push(fid);
+  });
+
+  /* ---------- toolbar ---------- */
+  var bar=document.createElement('div');bar.id='tm-edit';bar.setAttribute('data-tm-ui','1');
+  var pill=document.createElement('span');pill.className='tm-s';pill.setAttribute('role','status');pill.setAttribute('aria-live','polite');pill.hidden=true;
+  var retryBtn=document.createElement('button');retryBtn.type='button';retryBtn.className='tm-retry';retryBtn.textContent='Retry';retryBtn.hidden=true;
+  var editBtn=document.createElement('button');editBtn.type='button';editBtn.className='tm-toggle';editBtn.textContent='Edit';
+  bar.appendChild(pill);bar.appendChild(retryBtn);bar.appendChild(editBtn);document.body.appendChild(bar);
+  var box=document.createElement('div');box.id='tm-conflict';box.hidden=true;box.setAttribute('data-tm-ui','1');box.setAttribute('role','alertdialog');document.body.appendChild(box);
+  var editing=false,loadState='idle',okMessage=null,flashTimer=null;
+
+  function setEditing(on){
+    editing=on;document.body.classList.toggle('tm-editing',on);editBtn.textContent=on?'Done editing':'Edit';editBtn.classList.toggle('on',on);
+    order.forEach(function(k){if(on)F[k].el.setAttribute('contenteditable','true');else F[k].el.removeAttribute('contenteditable')});
+    if(on){ensureLoaded().catch(function(){});refresh();updateStatus()}else{flush()}
+  }
+  editBtn.onclick=function(){setEditing(!editing)};
+  retryBtn.onclick=function(){retryAll()};
+
+  function updateStatus(){
+    var dirty=0,saving=0,errs=0,conflicts=0,offline=false;
+    order.forEach(function(k){var f=F[k];if(f.dirty)dirty++;if(f.saving)saving++;if(f.error){errs++;if(f.error==='offline')offline=true}if(f.conflict)conflicts++});
+    var text='',cls='',showRetry=false;
+    if(conflicts){text=conflicts===1?'1 edit needs your choice':conflicts+' edits need your choice';cls='warn'}
+    else if(errs){text=offline?'Offline · edits kept in this browser':'Not saved · edits kept in this browser';cls='bad';showRetry=true}
+    else if(loadState==='failed'&&editing){text='Could not load shared edits';cls='bad';showRetry=true}
+    else if(saving){text='Saving…'}
+    else if(dirty){text='Unsaved changes'}
+    else if(loadState==='loading'&&editing){text='Loading shared edits…'}
+    else if(okMessage){text=okMessage;cls='ok'}
+    else if(editing){text='All changes saved';cls='ok'}
+    pill.textContent=text;pill.className='tm-s '+cls;pill.hidden=!text;retryBtn.hidden=!showRetry;
+    renderConflict();
+  }
+  function flashOk(m){okMessage=m;updateStatus();clearTimeout(flashTimer);flashTimer=setTimeout(function(){okMessage=null;updateStatus()},3500)}
+  function renderConflict(){
+    var f=null;for(var j=0;j<order.length;j++){if(F[order[j]].conflict){f=F[order[j]];break}}
+    order.forEach(function(k){F[k].el.classList.toggle('tm-conflict-field',!!F[k].conflict)});
+    if(!f){box.hidden=true;box.textContent='';box.removeAttribute('data-for');return}
+    if(box.getAttribute('data-for')===f.fid&&!box.hidden)return;
+    box.setAttribute('data-for',f.fid);box.textContent='';
+    var h=document.createElement('div');h.className='tm-ch';h.textContent='This text was also changed in another browser';
+    var cmp=document.createElement('div');cmp.className='tm-cmp';
+    function col(label,html){var c=document.createElement('div');c.className='tm-col';var l=document.createElement('div');l.className='tm-cl';l.textContent=label;var b=document.createElement('div');render(b,html);c.appendChild(l);c.appendChild(b);return c}
+    cmp.appendChild(col('Yours',f.conflict.mine));cmp.appendChild(col('Saved version',f.conflict.theirs.html||''));
+    var act=document.createElement('div');act.className='tm-ca';
+    var go=document.createElement('button');go.type='button';go.textContent='Show me';go.onclick=function(){f.el.scrollIntoView({block:'center',behavior:'smooth'})};
+    var take=document.createElement('button');take.type='button';take.textContent='Use saved version';take.onclick=function(){useTheirs(f.fid)};
+    var keep=document.createElement('button');keep.type='button';keep.className='primary';keep.textContent='Keep mine';keep.onclick=function(){keepMine(f.fid)};
+    act.appendChild(go);act.appendChild(take);act.appendChild(keep);box.appendChild(h);box.appendChild(cmp);box.appendChild(act);box.hidden=false;
+  }
+
+  /* ---------- local recovery ---------- */
+  function saveLocal(f){var d=lsGet(LS_DRAFT)||{};d[f.fid]={html:serialize(f.el),base:f.rev,at:Date.now()};lsSet(LS_DRAFT,d)}
+  function dropLocal(fid){var d=lsGet(LS_DRAFT);if(d&&d[fid]){delete d[fid];lsSet(LS_DRAFT,d)}}
+  function cacheServer(f,v){var c=lsGet(LS_CACHE)||{};c[f.fid]={html:v.html,rev:v.rev};lsSet(LS_CACHE,c)}
+
+  /* ---------- load / refresh ---------- */
+  function applyServer(data,fromCache){
+    if(!data||typeof data!=='object')return;
+    Object.keys(data).forEach(function(fid){
+      var f=F[fid],v=data[fid];
+      if(!f||!v||typeof v.html!=='string'||typeof v.rev!=='number')return;
+      if(f.conflict&&!fromCache&&v.rev>f.conflict.theirs.rev)f.conflict.theirs=v;
+      if(v.rev<=f.rev||f.dirty||f.saving||f.conflict)return;
+      render(f.el,v.html);f.rev=v.rev;f.synced=serialize(f.el);if(!fromCache)cacheServer(f,v);
+    });
+  }
+  var loadPromise=null;
+  function load(){
+    loadState='loading';updateStatus();
+    loadPromise=fetch(FIELDS+'.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json()})
+      .then(function(d){if(d===null)lsSet(LS_CACHE,{});applyServer(d,false);loadState='ok';restoreLocal();updateStatus()})
+      .catch(function(e){loadState='failed';loadPromise=null;updateStatus();throw e});
+    return loadPromise;
+  }
+  function ensureLoaded(){return loadState==='ok'?Promise.resolve():(loadPromise||load())}
+  function refresh(){if(loadState!=='ok'||document.hidden)return;fetch(FIELDS+'.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(d){applyServer(d,false);updateStatus()}).catch(function(){})}
+  function restoreLocal(){
+    var d=lsGet(LS_DRAFT);if(!d)return;var n=0;
+    Object.keys(d).forEach(function(fid){
+      var f=F[fid],x=d[fid];if(!f||!x||typeof x.html!=='string'){dropLocal(fid);return}
+      if(f.dirty||f.saving||f.conflict)return;
+      var t=document.createElement('div');render(t,x.html);var clean=serialize(t);
+      if(clean===f.synced){dropLocal(fid);return}
+      if(f.rev===x.base){render(f.el,clean);f.dirty=true;n++;schedule(f,50)}
+      else f.conflict={mine:clean,theirs:{html:f.synced,rev:f.rev}};
+    });
+    if(n)flashOk(n===1?'Restored 1 unsaved edit':'Restored '+n+' unsaved edits');
+  }
+
+  /* ---------- saving ---------- */
+  var chain=Promise.resolve();
+  function schedule(f,ms){clearTimeout(f.timer);f.timer=setTimeout(function(){f.timer=null;enqueue(f)},ms==null?900:ms)}
+  function enqueue(f){if(f.queued)return chain;f.queued=true;chain=chain.then(function(){f.queued=false;return saveField(f,0)});return chain}
+  function httpError(r){var e=new Error('http '+r.status);e.status=r.status;return e}
+  function saveField(f,attempt){
+    if(!f.dirty||f.conflict)return Promise.resolve();
+    f.saving=true;f.error=null;updateStatus();var html,base;
+    return ensureLoaded().then(function(){
+      if(f.conflict||!f.dirty)return 'skip';
+      html=serialize(f.el);base=f.rev;
+      if(html===f.synced){f.dirty=false;dropLocal(f.fid);return 'same'}
+      return fetch(FIELDS+'/'+f.fid+'.json',{cache:'no-store',headers:{'X-Firebase-ETag':'true'}}).then(function(r){
+        if(!r.ok)throw httpError(r);var etag=r.headers.get('ETag');if(!etag)throw new Error('missing etag');
+        return r.json().then(function(v){return{etag:etag,v:v}});
+      }).then(function(x){
+        var v=x.v,srv=(v&&typeof v.rev==='number')?v.rev:0;
+        if(srv!==base){if(v&&v.html===html){f.rev=srv;f.synced=html;cacheServer(f,v);return 'same'}f.conflict={mine:html,theirs:v||{html:'',rev:srv}};return 'conflict'}
+        var body={html:html,rev:base+1,at:{'.sv':'timestamp'},by:CLIENT};
+        return fetch(FIELDS+'/'+f.fid+'.json',{method:'PUT',cache:'no-store',headers:{'if-match':x.etag,'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){
+          if(r.status===412)return 'race';if(!r.ok)throw httpError(r);
+          return r.json().then(function(s){f.rev=s.rev;f.synced=s.html;cacheServer(f,s);return 'ok'});
+        });
+      });
+    }).then(function(res){
+      f.saving=false;
+      if(res==='race'&&attempt<3)return saveField(f,attempt+1);
+      if(res==='race')f.error='http';
+      if(res==='ok'||res==='same'){if(serialize(f.el)===f.synced){f.dirty=false;dropLocal(f.fid)}else{saveLocal(f);schedule(f,300)}}
+      updateStatus();
+    },function(e){f.saving=false;f.error=(navigator.onLine===false||!e.status)?'offline':'http';if(window.console)console.warn('Save failed for '+f.fid+':',e&&e.message);updateStatus()});
+  }
+  function keepMine(fid){var f=F[fid];if(!f||!f.conflict)return;var mine=f.conflict.mine;f.rev=f.conflict.theirs.rev||0;f.synced=f.conflict.theirs.html||'';f.conflict=null;box.removeAttribute('data-for');render(f.el,mine);f.dirty=true;saveLocal(f);updateStatus();enqueue(f)}
+  function useTheirs(fid){var f=F[fid];if(!f||!f.conflict)return;var t=f.conflict.theirs;render(f.el,t.html||'');f.rev=t.rev||0;f.synced=serialize(f.el);f.conflict=null;f.dirty=false;box.removeAttribute('data-for');dropLocal(fid);if(t.rev)cacheServer(f,t);updateStatus()}
+  function retryAll(){order.forEach(function(k){F[k].error=null});var p=loadState==='ok'?Promise.resolve():load();return p.then(function(){return flush()},function(){updateStatus()})}
+  function flush(){
+    order.forEach(function(k){var f=F[k];if(f.timer){clearTimeout(f.timer);f.timer=null}if(f.dirty&&!f.conflict)enqueue(f)});
+    return chain.then(function(){var bad=order.some(function(k){var f=F[k];return f.dirty||f.error||f.conflict});if(!bad)flashOk('All changes saved');else updateStatus();return !bad});
+  }
+
+  /* ---------- events ---------- */
+  function fieldFrom(t){var el=t&&t.closest?t.closest('[data-fid]'):null;return el?F[el.getAttribute('data-fid')]:null}
+  document.addEventListener('input',function(e){
+    if(!editing)return;var f=fieldFrom(e.target);if(!f)return;
+    if(serialize(f.el)===f.synced&&!f.saving){f.dirty=false;clearTimeout(f.timer);dropLocal(f.fid)}
+    else{f.dirty=true;f.error=null;saveLocal(f);schedule(f)}
+    okMessage=null;updateStatus();
+  },true);
+  document.addEventListener('paste',function(e){if(!editing||!fieldFrom(e.target))return;e.preventDefault();var t=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,t)},true);
+  document.addEventListener('drop',function(e){if(editing&&fieldFrom(e.target))e.preventDefault()},true);
+  document.addEventListener('click',function(e){if(editing&&fieldFrom(e.target)&&e.target.closest('a'))e.preventDefault()},true); /* links inside or around a field never navigate while editing */
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&editing&&fieldFrom(e.target))e.target.blur()});
+  window.addEventListener('online',function(){retryAll()});
+  window.addEventListener('beforeunload',function(e){var p=order.some(function(k){return F[k].dirty||F[k].saving});if(p){order.forEach(function(k){if(F[k].dirty)saveLocal(F[k])});e.preventDefault();e.returnValue='';return ''}});
+  setInterval(refresh,12000);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh()});
+
+  window.talexEdit={setEditing:setEditing,flush:flush,retry:retryAll,key:KEY,
+    state:function(){return{load:loadState,editing:editing,fields:order.length,dirty:order.filter(function(k){return F[k].dirty}),saving:order.filter(function(k){return F[k].saving}),errors:order.filter(function(k){return F[k].error}),conflicts:order.filter(function(k){return F[k].conflict})}}};
+
+  applyServer(lsGet(LS_CACHE),true);
+  load().catch(function(){});
+})();
+</script>
+<!-- tm-shared-edit:end -->
+</body>
+</html>
